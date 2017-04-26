@@ -23,3 +23,9 @@ nodeからサーバーを立ててReactを動かしたい時には、
 `http://qiita.com/armorik83/items/0658f4a6c75270da726a`
 
 多分expressを使わないと、nodeのサーバーでReactを使うことはできません。
+
+なぜかwebpack-dev-serverが使えない時があった。  
+それは`webpack.config.js`で、pathをimportまたはrequireしていなかったことと、  
+`path: __dirname + "dist"`などではエラーすることが判明。  
+なので、  
+`filename: 'dist/bundle.js'`と書くようにしましょう。
